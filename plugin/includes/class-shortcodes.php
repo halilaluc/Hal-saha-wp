@@ -9,6 +9,7 @@ class HSR_Shortcodes {
         add_shortcode('randevu_formu', array($this, 'booking_form'));
         add_shortcode('randevularim', array($this, 'my_appointments'));
         add_shortcode('admin_randevular', array($this, 'admin_appointments'));
+        add_shortcode('galeri', array($this, 'gallery'));
     }
     
     public function booking_form($atts) {
@@ -43,6 +44,12 @@ class HSR_Shortcodes {
         
         ob_start();
         include HSR_PLUGIN_DIR . 'templates/admin-appointments.php';
+        return ob_get_clean();
+    }
+    
+    public function gallery($atts) {
+        ob_start();
+        include HSR_PLUGIN_DIR . 'templates/gallery.php';
         return ob_get_clean();
     }
 }

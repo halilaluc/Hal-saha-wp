@@ -36,6 +36,7 @@ class Hali_Saha_Randevu {
         require_once HSR_PLUGIN_DIR . 'includes/class-ajax.php';
         require_once HSR_PLUGIN_DIR . 'includes/class-admin.php';
         require_once HSR_PLUGIN_DIR . 'includes/class-emails.php';
+        require_once HSR_PLUGIN_DIR . 'includes/class-gallery.php';
         
         // Init classes
         new HSR_Database();
