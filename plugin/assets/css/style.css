@@ -1,0 +1,241 @@
+/* Halı Saha Randevu - Plugin Styles */
+
+.hsr-card {
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 24px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.hsr-title {
+    font-size: 20px;
+    font-weight: bold;
+    color: #0F172A;
+    margin-bottom: 16px;
+}
+
+.hsr-input {
+    width: 100%;
+    padding: 12px 16px;
+    border: 2px solid #E2E8F0;
+    border-radius: 12px;
+    font-size: 16px;
+    transition: border-color 0.3s;
+}
+
+.hsr-input:focus {
+    outline: none;
+    border-color: #10B981;
+}
+
+.hsr-time-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    gap: 12px;
+}
+
+.hsr-time-slot {
+    padding: 12px;
+    border: 2px solid #E2E8F0;
+    border-radius: 12px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s;
+    background: white;
+    font-weight: 500;
+}
+
+.hsr-time-slot:hover:not(.hsr-booked) {
+    border-color: #10B981;
+    color: #10B981;
+}
+
+.hsr-time-slot.hsr-selected {
+    background: #10B981;
+    border-color: #10B981;
+    color: white;
+    transform: scale(1.05);
+}
+
+.hsr-time-slot.hsr-booked {
+    background: #F1F5F9;
+    color: #94A3B8;
+    cursor: not-allowed;
+    text-decoration: line-through;
+}
+
+.hsr-btn {
+    display: inline-block;
+    padding: 12px 24px;
+    border-radius: 25px;
+    font-weight: bold;
+    text-decoration: none;
+    cursor: pointer;
+    border: none;
+    transition: all 0.3s;
+}
+
+.hsr-btn-primary {
+    background: #10B981;
+    color: white;
+}
+
+.hsr-btn-primary:hover {
+    background: #059669;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+}
+
+.hsr-message {
+    padding: 12px 16px;
+    border-radius: 12px;
+    margin-top: 16px;
+}
+
+.hsr-message.success {
+    background: #D1FAE5;
+    color: #065F46;
+}
+
+.hsr-message.error {
+    background: #FEE2E2;
+    color: #991B1B;
+}
+
+.hsr-appointments-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 16px;
+    margin-bottom: 30px;
+}
+
+.hsr-appointment-card {
+    background: white;
+    border-radius: 16px;
+    padding: 20px;
+    border: 2px solid #E2E8F0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.hsr-appointment-card.hsr-past-card {
+    background: #F1F5F9;
+    opacity: 0.7;
+}
+
+.hsr-date {
+    font-size: 16px;
+    font-weight: 600;
+    color: #10B981;
+    margin: 0 0 8px 0;
+}
+
+.hsr-time {
+    font-size: 14px;
+    color: #64748B;
+    margin: 0;
+}
+
+.hsr-delete-btn {
+    background: #EF4444;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background 0.3s;
+}
+
+.hsr-delete-btn:hover {
+    background: #DC2626;
+}
+
+.hsr-empty {
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.hsr-empty p {
+    font-size: 18px;
+    color: #64748B;
+    margin-bottom: 20px;
+}
+
+/* Admin Styles */
+.hsr-admin-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.hsr-stat-box {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    border: 1px solid #E2E8F0;
+}
+
+.hsr-stat-box h3 {
+    margin: 0 0 10px 0;
+    font-size: 14px;
+    color: #64748B;
+}
+
+.hsr-stat-number {
+    font-size: 32px;
+    font-weight: bold;
+    color: #0F172A;
+    margin: 0;
+}
+
+.hsr-date-group {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #E2E8F0;
+}
+
+.hsr-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+.hsr-table th,
+.hsr-table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #E2E8F0;
+}
+
+.hsr-table th {
+    background: #F8FAFC;
+    font-weight: 600;
+    color: #0F172A;
+}
+
+.hsr-status-badge {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 12px;
+    background: #D1FAE5;
+    color: #065F46;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .hsr-time-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .hsr-appointments-grid {
+        grid-template-columns: 1fr;
+    }
+}
